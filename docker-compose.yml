@@ -45,6 +45,18 @@ services:
       - '8080:8080'
     volumes:
       - airflow_data:/bitnami
+  flower:
+    image: selmanay/bitnami-docker-airflow-cli:tagname
+    environment:
+      - AIRFLOW_DATABASE_NAME=bitnami_airflow
+      - AIRFLOW_DATABASE_USERNAME=bn_airflow
+      - AIRFLOW_DATABASE_PASSWORD=bitnami1
+      - AIRFLOW_WEBSERVER_CLI_COMMAND=flower -p 8081
+      - AIRFLOW_EXECUTOR=CeleryExecutor
+    ports:
+      - '8081:8081'
+    volumes:
+      - airflow_data:/bitnami
 volumes:
   airflow_scheduler_data:
     driver: local

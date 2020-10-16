@@ -8,7 +8,7 @@
 USER=airflow
 DAEMON=airflow
 EXEC=$(which $DAEMON)
-START_COMMAND="${EXEC} webserver | tee /opt/bitnami/airflow/logs/airflow-webserver.log"
+START_COMMAND="${EXEC} ${AIRFLOW_WEBSERVER_CLI_COMMAND} | tee /opt/bitnami/airflow/logs/airflow-cli.log"
 
 # Install custom python package if requirements.txt is present
 if [[ -f "/bitnami/python/requirements.txt" ]]; then
