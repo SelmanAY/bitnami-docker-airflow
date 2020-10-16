@@ -1,3 +1,7 @@
+# Purpose of fork #
+Airflow uses Celery project as its workers. It has a UI to monitor workers to see loads how many workers is active etc. 
+This fork parameterizes start command in run.sh so that arbitrary airflow cli command can be executed. (flower command used in that case)
+
 # What is Apache Airflow?
 
 > Airflow is a platform to programmatically author, schedule and monitor workflows.
