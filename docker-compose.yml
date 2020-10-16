@@ -46,7 +46,7 @@ services:
     volumes:
       - airflow_data:/bitnami
   flower:
-    image: selmanay/bitnami-docker-airflow-cli:tagname
+    image: selmanay/bitnami-docker-airflow-cli:latest
     environment:
       - AIRFLOW_DATABASE_NAME=bitnami_airflow
       - AIRFLOW_DATABASE_USERNAME=bn_airflow
